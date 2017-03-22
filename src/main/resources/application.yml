@@ -1,0 +1,4 @@
+arangodb:
+  host: localhost
+  port: 8529
+  database: _system
