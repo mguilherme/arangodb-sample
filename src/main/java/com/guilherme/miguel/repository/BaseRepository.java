@@ -37,6 +37,16 @@ public abstract class BaseRepository<T> {
     }
 
     /**
+     * Partially updates the document identified by document-key
+     *
+     * @param key      the key of the document
+     * @param document a representation of a single document
+     */
+    public void update(String key, T document) {
+        arangoDatabase.collection(getCollection()).updateDocument(key, document);
+    }
+
+    /**
      * Reads a single document
      *
      * @param key the key of the document

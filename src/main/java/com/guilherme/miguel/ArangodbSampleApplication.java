@@ -34,5 +34,9 @@ public class ArangodbSampleApplication implements CommandLineRunner {
         movieRepository.save(movie);
 
         log.info("Movie: {}", movieRepository.get(movie.getKey()));
+
+        movie.setTitle("New title");
+        movieRepository.update(movie.getKey(), movie);
+        log.info("Updated Movie: {}", movieRepository.get(movie.getKey()));
     }
 }
